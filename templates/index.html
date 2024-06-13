@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Прогноз погоды</title>
+   <!-- Bootstrap CSS -->
+      <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+   <h1 class="text-center mb-4">Сайт случайных цитат</h1>
+
+   <form method="post" class="form-inline justify-content-center mb-4">
+
+       <button type="submit" class="btn btn-primary mb-2">Получить цитату</button>
+   </form>
+
+   <div class="result text-center">
+       {% if random_info %}
+
+                <h3>Цитата: {{ random_info['content'] }}</h3>
+                <br>
+                <h4>Автор: {{ random_info['author'] }}</h4>
+                <br>
+                <h5>Тематика: {{', '.join(random_info['tags']) }}</h5>
+
+       {% endif %}
+
+   </div>
+
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+</body>
+</html>
